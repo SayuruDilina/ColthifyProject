@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="665.0" style="-fx-background-color: #95AFC0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="299.0" fitWidth="413.0" layoutX="20.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Login.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#c7ecee" height="278.0" layoutX="433.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+      <Label layoutX="482.0" layoutY="83.0" text="S&amp;N Fashion">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="488.0" layoutY="134.0" text="Welcome">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" layoutX="477.0" layoutY="175.0" promptText="Username" />
+      <JFXTextField fx:id="txtPassword" layoutX="477.0" layoutY="222.0" promptText="Password" />
+      <Label fx:id="lblForgotPw" layoutX="490.0" layoutY="257.0" text="Forgot Password?" />
+      <JFXButton layoutX="477.0" layoutY="287.0" onAction="#loginOnAction" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #2ECC71;" text="Login" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
