@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.ProductsFormController">
    <children>
       <BorderPane layoutX="32.0" layoutY="24.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -25,12 +24,12 @@
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <JFXButton layoutX="17.0" layoutY="138.0" prefHeight="52.0" prefWidth="159.0" text="Gents">
+                        <JFXButton layoutX="17.0" layoutY="138.0" onAction="#gentsOnAction" prefHeight="52.0" prefWidth="159.0" text="Gents">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="21.0" layoutY="228.0" prefHeight="52.0" prefWidth="159.0" text="Ladies">
+                        <JFXButton layoutX="21.0" layoutY="228.0" onAction="#btnLadiesOnAction" prefHeight="52.0" prefWidth="159.0" text="Ladies">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -46,41 +45,98 @@
             </AnchorPane>
          </left>
          <center>
-            <AnchorPane prefHeight="400.0" prefWidth="538.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="521.0" prefWidth="732.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="121.0" layoutY="122.0" prefHeight="400.0" prefWidth="580.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="gentsProductPage" layoutX="121.0" layoutY="122.0" prefHeight="400.0" prefWidth="580.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <HBox alignment="CENTER" layoutX="26.0" layoutY="168.0" prefHeight="220.0" prefWidth="653.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="450.0">
+                        <HBox alignment="CENTER" layoutX="26.0" layoutY="168.0" prefHeight="220.0" prefWidth="653.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="450.0">
                            <children>
-                              <TableView prefHeight="200.0" prefWidth="642.0">
+                              <TableView fx:id="tblView" prefHeight="200.0" prefWidth="642.0">
                                 <columns>
-                                  <TableColumn prefWidth="133.0" text="Item Code" />
-                                  <TableColumn prefWidth="127.0" text="Item Name" />
-                                    <TableColumn prefWidth="127.0" text="Qty" />
-                                    <TableColumn prefWidth="127.0" text="Size" />
-                                    <TableColumn prefWidth="127.0" text="Color" />
+                                  <TableColumn fx:id="colItemCode" prefWidth="133.0" text="Item Code" />
+                                  <TableColumn fx:id="colItemName" prefWidth="127.0" text="Item Name" />
+                                    <TableColumn fx:id="colQty" prefWidth="127.0" text="Qty" />
+                                    <TableColumn fx:id="colSize" prefWidth="127.0" text="Size" />
+                                    <TableColumn fx:id="colColor" prefWidth="127.0" text="Color" />
                                 </columns>
                               </TableView>
                            </children>
                         </HBox>
-                        <JFXTextField layoutX="93.0" layoutY="71.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Code" />
-                        <JFXTextField layoutX="96.0" layoutY="126.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Name" />
-                        <JFXTextField layoutX="96.0" layoutY="179.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Name" text="Qty" />
-                        <JFXTextField layoutX="96.0" layoutY="238.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Name" text="Size" />
-                        <JFXTextField layoutX="96.0" layoutY="300.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Name" text="Color" />
-                        <Button layoutX="476.0" layoutY="95.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" text="ADD">
+                        <JFXTextField fx:id="txtItemCode" layoutX="93.0" layoutY="71.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Code" />
+                        <JFXTextField fx:id="txtItemName" layoutX="96.0" layoutY="126.0" prefHeight="25.0" prefWidth="233.0" promptText="Item Name" />
+                        <JFXTextField fx:id="txtQty" layoutX="96.0" layoutY="179.0" prefHeight="25.0" prefWidth="233.0" promptText="Qty" />
+                        <JFXTextField fx:id="txtSize" layoutX="96.0" layoutY="238.0" prefHeight="25.0" prefWidth="233.0" promptText="Size" />
+                        <JFXTextField fx:id="txtColor" layoutX="96.0" layoutY="300.0" prefHeight="25.0" prefWidth="233.0" promptText="Color" />
+                        <Button layoutX="476.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="42.0" prefWidth="176.0" text="ADD">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="476.0" layoutY="196.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="176.0" text="Update">
+                        <Button layoutX="476.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="43.0" prefWidth="176.0" text="Update">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="476.0" layoutY="294.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="176.0" text="Delete">
+                        <Button layoutX="476.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="176.0" text="Delete">
                            <font>
                               <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="LadiesProductPage" layoutX="6.0" prefHeight="542.0" prefWidth="685.0" visible="false" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutX="12.0" layoutY="238.0" prefHeight="245.0" prefWidth="643.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+                           <children>
+                              <TableView fx:id="tblViewLadies" prefHeight="229.0" prefWidth="639.0">
+                                 <columns>
+                                    <TableColumn fx:id="colILadiesItemCode" prefWidth="133.0" text="Item Code" />
+                                    <TableColumn fx:id="colLadiesItemName" prefWidth="127.0" text="Item Name" />
+                                    <TableColumn fx:id="colLadiesQty" prefWidth="127.0" text="Qty" />
+                                    <TableColumn fx:id="colLadiesSize" prefWidth="127.0" text="Size" />
+                                    <TableColumn fx:id="colLadiesColor" prefWidth="127.0" text="Color" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="67.0" layoutY="29.0" prefHeight="31.0" prefWidth="180.0" AnchorPane.leftAnchor="70.0">
+                           <children>
+                              <JFXTextField fx:id="txtItemCodeL" prefHeight="25.0" prefWidth="184.0" promptText="Item Code" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="60.0" layoutY="82.0" prefHeight="34.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0">
+                           <children>
+                              <JFXTextField fx:id="txtItemNameL" prefHeight="25.0" prefWidth="187.0" promptText="Item Name" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="70.0" layoutY="137.0" prefHeight="44.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0">
+                           <children>
+                              <JFXTextField fx:id="txtItemQtyL" prefHeight="25.0" prefWidth="188.0" promptText="Qty" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="65.0" layoutY="190.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0">
+                           <children>
+                              <JFXTextField fx:id="txtSizeL" prefHeight="25.0" prefWidth="190.0" promptText="Size" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="70.0" layoutY="243.0" prefHeight="31.0" prefWidth="199.0" AnchorPane.leftAnchor="70.0">
+                           <children>
+                              <JFXTextField fx:id="txtColorL" prefHeight="25.0" prefWidth="186.0" promptText="Color" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="411.0" layoutY="47.0" mnemonicParsing="false" onAction="#btnAddOnActionL" prefHeight="41.0" prefWidth="153.0" text="ADD">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="410.0" layoutY="113.0" mnemonicParsing="false" onAction="#btnUpdateOnActionL" prefHeight="41.0" prefWidth="153.0" text="Update">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="412.0" layoutY="186.0" mnemonicParsing="false" onAction="#btnDeleteOnActionL" prefHeight="41.0" prefWidth="153.0" text="Delete">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
                      </children>

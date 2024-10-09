@@ -25,7 +25,8 @@ public class LoginFormController {
     void loginOnAction(ActionEvent event) {
         Stage stage=new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/dashboard_form_employee.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/products_form.fxml"))));
+         //  stage.setFullScreen(true);
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
