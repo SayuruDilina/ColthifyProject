@@ -27,4 +27,20 @@ public class LadiesProductBoImpl implements LadiesProductsBo {
         ObservableList<LadiesProductsEntity> all=ladiesProductsDao.getAll();
         return all;
     }
+
+    @Override
+    public boolean updateLadiesProducts(LadiesProducts ladiesProducts) {
+        LadiesProductsEntity ladiesProductsEntity=new ModelMapper().map(ladiesProducts, LadiesProductsEntity.class);
+        LadiesProductsDao ladiesProductsDao=DaoFactory.getInstance().getDaoType(DaoType.LADIESPRODUCTS);
+        ladiesProductsDao.update(ladiesProductsEntity);
+        return false;
+    }
+
+    @Override
+    public boolean deleteLadiesProducts(LadiesProducts ladiesProducts) {
+        LadiesProductsEntity ladiesProductsEntity=new  ModelMapper().map(ladiesProducts, LadiesProductsEntity.class);
+        LadiesProductsDao ladiesProductsDao=DaoFactory.getInstance().getDaoType(DaoType.LADIESPRODUCTS);
+        ladiesProductsDao.delete(ladiesProductsEntity);
+        return false;
+    }
 }

@@ -32,4 +32,24 @@ public class GentsProductDaoImpl implements GentsProductsDao {
          session.close();
        return gentsProductsEntityObservableList;
     }
+
+    @Override
+    public boolean update(GentsProductsEntity gentsProductsEntity) {
+        Session session=HibernateUtil.getSession();
+        session.beginTransaction();
+        session.update(gentsProductsEntity);
+        session.getTransaction().commit();
+        session.close();
+        return false;
+    }
+
+    @Override
+    public boolean delete(GentsProductsEntity gentsProductsEntity) {
+        Session session=HibernateUtil.getSession();
+        session.beginTransaction();
+        session.delete(gentsProductsEntity);
+        session.getTransaction().commit();
+        session.close();
+        return false;
+    }
 }

@@ -1,6 +1,7 @@
 package edu.icet.bo;
 
 import edu.icet.bo.custom.Impl.GentsProductsBoImpl;
+import edu.icet.bo.custom.Impl.KidsProductsBoImpl;
 import edu.icet.bo.custom.Impl.LadiesProductBoImpl;
 import edu.icet.dao.custom.Impl.LadiesProductsDaoImpl;
 import edu.icet.util.BoType;
@@ -19,6 +20,7 @@ public class BoFactory {
     switch (type){
         case GENTSPRODUCTS:return (T) new GentsProductsBoImpl();
         case LADIESPRODUCTS:return (T) new LadiesProductBoImpl();
+        case  KIDSPRODUCTS:return (T) new KidsProductsBoImpl();
     }
     return null;
     }

@@ -49,7 +49,7 @@
                                     <Image url="@../img/products.png" />
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="273.0" style="-fx-background-color: #8e44ad;" text="Products" textFill="#f8f6f6">
+                              <Button mnemonicParsing="false" onAction="#btnProductsOnAction" prefHeight="40.0" prefWidth="273.0" style="-fx-background-color: #8e44ad;" text="Products" textFill="#f8f6f6">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -63,7 +63,7 @@
                                     <Image url="@../img/order.png" />
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="274.0" style="-fx-background-color: #8e44ad;" text="Order" textFill="#f8f6f6">
+                              <Button mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="40.0" prefWidth="274.0" style="-fx-background-color: #8e44ad;" text="Order" textFill="#f8f6f6">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

@@ -34,4 +34,24 @@ public class LadiesProductsDaoImpl implements LadiesProductsDao {
         return ladiesProductsEntityObservableList;
 
     }
+
+    @Override
+    public boolean update(LadiesProductsEntity ladiesProducts) {
+        Session session=HibernateUtil.getSession();
+        session.beginTransaction();
+        session.update(ladiesProducts);
+        session.getTransaction().commit();
+        session.close();
+        return false;
+    }
+
+    @Override
+    public boolean delete(LadiesProductsEntity ladiesProducts) {
+        Session session=HibernateUtil.getSession();
+        session.beginTransaction();
+        session.delete(ladiesProducts);
+        session.getTransaction().commit();
+        session.close();
+        return false;
+    }
 }

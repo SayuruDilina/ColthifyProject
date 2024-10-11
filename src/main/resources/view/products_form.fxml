@@ -34,7 +34,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="16.0" layoutY="303.0" prefHeight="52.0" prefWidth="159.0" text="Kids">
+                        <JFXButton layoutX="16.0" layoutY="303.0" onAction="#btnKidsOnAction" prefHeight="52.0" prefWidth="159.0" text="Kids">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -135,6 +135,43 @@
                            </font>
                         </Button>
                         <Button layoutX="412.0" layoutY="186.0" mnemonicParsing="false" onAction="#btnDeleteOnActionL" prefHeight="41.0" prefWidth="153.0" text="Delete">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="KidsProductPage" prefHeight="541.0" prefWidth="685.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="258.0" prefHeight="232.0" prefWidth="657.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                           <children>
+                              <TableView fx:id="tblViewK" prefHeight="200.0" prefWidth="642.0">
+                                 <columns>
+                                    <TableColumn fx:id="colItemCodeK" prefWidth="133.0" text="Item Code" />
+                                    <TableColumn fx:id="colItemNameK" prefWidth="127.0" text="Item Name" />
+                                    <TableColumn fx:id="colQtyK" prefWidth="127.0" text="Qty" />
+                                    <TableColumn fx:id="colSizeK" prefWidth="127.0" text="Size" />
+                                    <TableColumn fx:id="colColorK" prefWidth="127.0" text="Color" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="txtItemCodeK" layoutX="76.0" layoutY="74.0" prefHeight="25.0" prefWidth="177.0" promptText="Item Code" />
+                        <JFXTextField fx:id="txtItemNameK" layoutX="76.0" layoutY="132.0" prefHeight="25.0" prefWidth="177.0" promptText="Item Name" />
+                        <JFXTextField fx:id="txtQtyK" layoutX="76.0" layoutY="181.0" prefHeight="25.0" prefWidth="177.0" promptText="Qty" />
+                        <JFXTextField fx:id="txtSizeK" layoutX="76.0" layoutY="231.0" prefHeight="25.0" prefWidth="177.0" promptText="Size" />
+                        <JFXTextField fx:id="txtColorK" layoutX="75.0" layoutY="294.0" prefHeight="25.0" prefWidth="177.0" promptText="Color" />
+                        <Button layoutX="430.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnAddOnActionK" prefHeight="41.0" prefWidth="163.0" text="ADD">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="430.0" layoutY="145.0" mnemonicParsing="false" onAction="#btnUpdateOnActionK" prefHeight="48.0" prefWidth="167.0" text="Update">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="430.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnDeleteOnActionK" prefHeight="48.0" prefWidth="167.0" text="Delete">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
