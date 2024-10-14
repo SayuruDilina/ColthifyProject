@@ -14,7 +14,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="575.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.OrderFormController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="776.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -23,12 +22,12 @@
                <children>
                   <AnchorPane layoutX="-14.0" layoutY="100.0" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <JFXButton layoutX="15.0" layoutY="96.0" prefHeight="44.0" prefWidth="169.0" text="Place Order">
+                        <JFXButton layoutX="15.0" layoutY="96.0" onAction="#btnPlaceOrderPageInAction" prefHeight="44.0" prefWidth="169.0" text="Place Order">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="15.0" layoutY="165.0" prefHeight="44.0" prefWidth="169.0" text="Update Order">
+                        <JFXButton layoutX="15.0" layoutY="165.0" onAction="#btnUpdateOrderPageOnAction" prefHeight="44.0" prefWidth="169.0" text="Update Order">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -51,7 +50,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="-8.0" prefHeight="692.0" prefWidth="713.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="placeOrderPage" layoutX="-8.0" prefHeight="692.0" prefWidth="713.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox alignment="CENTER" layoutX="24.0" layoutY="32.0" prefHeight="36.0" prefWidth="218.0" AnchorPane.leftAnchor="80.0">
                            <children>
@@ -60,13 +59,14 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="3.0" layoutY="157.0" prefHeight="228.0" prefWidth="620.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="43.0">
                            <children>
-                              <TableView fx:id="tblView" prefHeight="228.0" prefWidth="586.0">
+                              <TableView fx:id="tblView" prefHeight="228.0" prefWidth="615.0">
                                  <columns>
                                     <TableColumn fx:id="colItemCode" prefWidth="118.0" text="Item Code" />
                                     <TableColumn fx:id="colItemName" prefWidth="118.0" text="Item Name" />
-                                    <TableColumn fx:id="colQty" prefWidth="104.0" text="Qty" />
-                                    <TableColumn fx:id="colSize" prefWidth="98.0" text="Size" />
-                                    <TableColumn fx:id="colColor" prefWidth="146.0" text="Color" />
+                                    <TableColumn fx:id="colQty" prefWidth="74.0" text="Qty" />
+                                    <TableColumn fx:id="colSize" prefWidth="92.0" text="Size" />
+                                    <TableColumn fx:id="colColor" prefWidth="106.0" text="Color" />
+                                    <TableColumn fx:id="colPrice" prefWidth="106.0" text="Price" />
                                  </columns>
                               </TableView>
                            </children>
@@ -112,8 +112,8 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Spinner fx:id="spinQty" layoutX="165.0" layoutY="309.0" prefHeight="25.0" prefWidth="92.0" />
-                        <Label layoutX="100.0" layoutY="313.0" prefHeight="17.0" prefWidth="71.0" text="Quantity">
+                        <Spinner fx:id="spinQty" editable="true" layoutX="165.0" layoutY="291.0" prefHeight="25.0" prefWidth="92.0" />
+                        <Label layoutX="100.0" layoutY="294.0" prefHeight="17.0" prefWidth="71.0" text="Quantity">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -124,6 +124,36 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </JFXButton>
+                        <Label layoutX="100.0" layoutY="332.0" prefHeight="19.0" prefWidth="51.0" text="Total :">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotalCard" layoutX="176.0" layoutY="332.0" prefHeight="17.0" prefWidth="71.0" text="0000.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="updateOrderPage" prefHeight="692.0" prefWidth="713.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutX="102.0" layoutY="58.0" prefHeight="36.0" prefWidth="298.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="300.0">
+                           <children>
+                              <JFXTextField fx:id="txtSearchEmail" prefHeight="25.0" prefWidth="301.0" promptText="Email" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="453.0" layoutY="53.0" prefHeight="61.0" prefWidth="200.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="60.0">
+                           <children>
+                              <JFXButton onAction="#btnSearchUpdatePageOnAction" prefHeight="25.0" prefWidth="146.0" text="Search">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="txtCustomerNameSea" layoutX="160.0" layoutY="176.0" prefHeight="57.0" prefWidth="366.0" promptText="Customer Name" />
+                        <JFXTextField fx:id="txtEmailSea" layoutX="160.0" layoutY="289.0" prefHeight="57.0" prefWidth="366.0" promptText="Email" />
                      </children>
                   </AnchorPane>
                </children>

@@ -3,6 +3,7 @@ package edu.icet.dao;
 import edu.icet.dao.custom.Impl.GentsProductDaoImpl;
 import edu.icet.dao.custom.Impl.KidsProductsDaoImpl;
 import edu.icet.dao.custom.Impl.LadiesProductsDaoImpl;
+import edu.icet.dao.custom.Impl.OrdersDaoImpl;
 import edu.icet.util.DaoType;
 
 public class DaoFactory {
@@ -18,6 +19,7 @@ public class DaoFactory {
             case GENTSPRODUCTS : return (T) new GentsProductDaoImpl();
             case LADIESPRODUCTS:return (T) new LadiesProductsDaoImpl();
             case KIDSPRODUCTS: return (T) new KidsProductsDaoImpl();
+            case  ORDERS:return (T) new OrdersDaoImpl();
         }
         return null;
 

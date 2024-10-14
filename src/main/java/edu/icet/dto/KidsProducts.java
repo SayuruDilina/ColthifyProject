@@ -16,5 +16,6 @@ public class KidsProducts {
     private Integer qty;
     private String size;
     private String color;
+    private Double price;
 
 }

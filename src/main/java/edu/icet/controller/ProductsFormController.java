@@ -29,6 +29,24 @@ public class ProductsFormController  implements  Initializable{
 
         private AnchorPane page;
     @FXML
+    private TableColumn<?, ?> colPriceK;
+
+    @FXML
+    private TableColumn<?, ?> colLadiesPrice;
+
+    @FXML
+    private JFXTextField txtPricerK;
+
+    @FXML
+    private JFXTextField txtPriceL;
+
+    @FXML
+    private JFXTextField txtPrice;
+
+    @FXML
+    private TableColumn<?, ?> colPrice;
+
+    @FXML
     private AnchorPane KidsProductPage;
 
     @FXML
@@ -149,6 +167,7 @@ public class ProductsFormController  implements  Initializable{
             colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
             colSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             colColor.setCellValueFactory(new PropertyValueFactory<>("color"));
+            colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         GentsProductsBo gentsProductsBo= BoFactory.getInstance().getBoType(BoType.GENTSPRODUCTS);
         tblView.setItems(gentsProductsBo.getAll());
@@ -164,6 +183,7 @@ public class ProductsFormController  implements  Initializable{
         colLadiesQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colLadiesSize.setCellValueFactory(new PropertyValueFactory<>("size"));
         colLadiesColor.setCellValueFactory(new PropertyValueFactory<>("color"));
+        colLadiesPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         LadiesProductsBo ladiesProductsBo=BoFactory.getInstance().getBoType(BoType.LADIESPRODUCTS);
         tblViewLadies.setItems(ladiesProductsBo.getAll());
@@ -181,6 +201,8 @@ public class ProductsFormController  implements  Initializable{
         colQtyK.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colSizeK.setCellValueFactory(new PropertyValueFactory<>("size"));
         colColorK.setCellValueFactory(new PropertyValueFactory<>("color"));
+        colPriceK.setCellValueFactory(new PropertyValueFactory<>("price"));
+
 
         KidsProductsBo kidsProductsBo=BoFactory.getInstance().getBoType(BoType.KIDSPRODUCTS);
         tblViewK.setItems(kidsProductsBo.getAll());
@@ -195,7 +217,8 @@ public class ProductsFormController  implements  Initializable{
                     txtItemName.getText(),
                     Integer.parseInt(txtQty.getText()),
                     txtSize.getText(),
-                    txtColor.getText()
+                    txtColor.getText(),
+                    Double.parseDouble(txtPrice.getText())
             );
             gentsProductsBo.addGentsProducts(gentsProducts);
 
@@ -211,7 +234,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameL.getText(),
                 Integer.parseInt(txtItemQtyL.getText()),
                 txtSizeL.getText(),
-                txtColorL.getText()
+                txtColorL.getText(),
+                Double.parseDouble(txtPriceL.getText())
         );
         ladiesProductsBo.addLadiesProducts(ladiesProducts);
 
@@ -225,7 +249,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameK.getText(),
                 Integer.parseInt(txtQtyK.getText()),
                 txtSizeK.getText(),
-                txtColorK.getText()
+                txtColorK.getText(),
+                Double.parseDouble(txtPricerK.getText())
         );
 
         kidsProductsBo.addKidsProducts(kidsProducts);
@@ -239,7 +264,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemName.getText(),
                 Integer.parseInt(txtQty.getText()),
                 txtSize.getText(),
-                txtColor.getText()
+                txtColor.getText(),
+                Double.parseDouble(txtPrice.getText())
         );
         gentsProductsBo.deleteGentsProducts(gentsProducts);
 
@@ -253,7 +279,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameL.getText(),
                 Integer.parseInt(txtItemQtyL.getText()),
                 txtSizeL.getText(),
-                txtColorL.getText()
+                txtColorL.getText(),
+                Double.parseDouble(txtPriceL.getText())
         );
         ladiesProductsBo.deleteLadiesProducts(ladiesProducts);
     }
@@ -266,7 +293,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameK.getText(),
                 Integer.parseInt(txtQtyK.getText()),
                 txtSizeK.getText(),
-                txtColorK.getText()
+                txtColorK.getText(),
+                Double.parseDouble(txtPricerK.getText())
         );
 
         kidsProductsBo.deleteKidsProducts(kidsProducts);
@@ -282,7 +310,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemName.getText(),
                 Integer.parseInt(txtQty.getText()),
                 txtSize.getText(),
-                txtColor.getText()
+                txtColor.getText(),
+                Double.parseDouble(txtPrice.getText())
         );
         gentsProductsBo.updateGentsProducts(gentsProducts);
 
@@ -296,7 +325,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameL.getText(),
                 Integer.parseInt(txtItemQtyL.getText()),
                 txtSizeL.getText(),
-                txtColorL.getText()
+                txtColorL.getText(),
+                Double.parseDouble(txtPriceL.getText())
         );
         ladiesProductsBo.updateLadiesProducts(ladiesProducts);
 
@@ -310,7 +340,8 @@ public class ProductsFormController  implements  Initializable{
                 txtItemNameK.getText(),
                 Integer.parseInt(txtQtyK.getText()),
                 txtSizeK.getText(),
-                txtColorK.getText()
+                txtColorK.getText(),
+                Double.parseDouble(txtPricerK.getText())
         );
 
         kidsProductsBo.updateLKidsProducts(kidsProducts);
@@ -345,6 +376,7 @@ public class ProductsFormController  implements  Initializable{
         txtQtyK.setText(newValue.getQty().toString());
         txtSizeK.setText(newValue.getSize());
         txtColorK.setText(newValue.getColor());
+        txtPricerK.setText(newValue.getPrice().toString());
     }
 
     private void setTextToValuesL(LadiesProductsEntity newValue) {
@@ -353,6 +385,7 @@ public class ProductsFormController  implements  Initializable{
         txtItemQtyL.setText(newValue.getQty().toString());
         txtSizeL.setText(newValue.getSize());
         txtColorL.setText(newValue.getColor());
+        txtPriceL.setText(newValue.getPrice().toString());
     }
 
     private void setTextToValuesG(GentsProductsEntity newValue) {
@@ -361,6 +394,6 @@ public class ProductsFormController  implements  Initializable{
         txtQty.setText(newValue.getQty().toString());
         txtSize.setText(newValue.getSize());
         txtColor.setText(newValue.getColor());
-
+        txtPrice.setText(newValue.getPrice().toString());
     }
 }

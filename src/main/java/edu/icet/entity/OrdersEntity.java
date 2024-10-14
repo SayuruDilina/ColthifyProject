@@ -1,4 +1,4 @@
-package edu.icet.entity;
+package edu.icet.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,17 +7,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@ToString
+import java.util.List;
 @Data
 @AllArgsConstructor
+@ToString
 @NoArgsConstructor
 @Entity
-public class LadiesProductsEntity {
+public class OrdersEntity {
     @Id
-    private Integer itemCode;
-    private String itemName;
-    private Integer qty;
-    private String size;
-    private String color;
-    private Double price;
+    private  Integer orderId;
+    private List<Cart> orderItems;
+    private String customerName;
+    private  String email;
+    private  Double netTotal;
 }

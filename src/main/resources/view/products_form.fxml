@@ -45,7 +45,7 @@
             </AnchorPane>
          </left>
          <center>
-            <AnchorPane prefHeight="521.0" prefWidth="732.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="541.0" prefWidth="706.0" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane fx:id="gentsProductPage" layoutX="121.0" layoutY="122.0" prefHeight="400.0" prefWidth="580.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -55,9 +55,10 @@
                                 <columns>
                                   <TableColumn fx:id="colItemCode" prefWidth="133.0" text="Item Code" />
                                   <TableColumn fx:id="colItemName" prefWidth="127.0" text="Item Name" />
-                                    <TableColumn fx:id="colQty" prefWidth="127.0" text="Qty" />
-                                    <TableColumn fx:id="colSize" prefWidth="127.0" text="Size" />
-                                    <TableColumn fx:id="colColor" prefWidth="127.0" text="Color" />
+                                    <TableColumn fx:id="colQty" prefWidth="67.0" text="Qty" />
+                                    <TableColumn fx:id="colSize" text="Size" />
+                                    <TableColumn fx:id="colColor" prefWidth="122.0" text="Color" />
+                                    <TableColumn fx:id="colPrice" prefWidth="122.0" text="Price" />
                                 </columns>
                               </TableView>
                            </children>
@@ -82,19 +83,21 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
+                        <JFXTextField fx:id="txtPrice" layoutX="98.0" layoutY="352.0" prefHeight="25.0" prefWidth="233.0" promptText="Price" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="LadiesProductPage" layoutX="6.0" prefHeight="542.0" prefWidth="685.0" visible="false" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="LadiesProductPage" layoutX="6.0" prefHeight="541.0" prefWidth="685.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <HBox layoutX="12.0" layoutY="238.0" prefHeight="245.0" prefWidth="643.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+                        <HBox layoutY="37.0" prefHeight="258.0" prefWidth="691.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="34.0">
                            <children>
-                              <TableView fx:id="tblViewLadies" prefHeight="229.0" prefWidth="639.0">
+                              <TableView fx:id="tblViewLadies" prefHeight="245.0" prefWidth="678.0">
                                  <columns>
                                     <TableColumn fx:id="colILadiesItemCode" prefWidth="133.0" text="Item Code" />
                                     <TableColumn fx:id="colLadiesItemName" prefWidth="127.0" text="Item Name" />
-                                    <TableColumn fx:id="colLadiesQty" prefWidth="127.0" text="Qty" />
-                                    <TableColumn fx:id="colLadiesSize" prefWidth="127.0" text="Size" />
-                                    <TableColumn fx:id="colLadiesColor" prefWidth="127.0" text="Color" />
+                                    <TableColumn fx:id="colLadiesQty" prefWidth="74.0" text="Qty" />
+                                    <TableColumn fx:id="colLadiesSize" prefWidth="99.0" text="Size" />
+                                    <TableColumn fx:id="colLadiesColor" prefWidth="124.0" text="Color" />
+                                    <TableColumn fx:id="colLadiesPrice" prefWidth="124.0" text="Price" />
                                  </columns>
                               </TableView>
                            </children>
@@ -139,19 +142,21 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
+                        <JFXTextField fx:id="txtPriceL" layoutX="71.0" layoutY="314.0" prefHeight="25.0" prefWidth="186.0" promptText="Price" />
                      </children>
                   </AnchorPane>
                   <AnchorPane fx:id="KidsProductPage" prefHeight="541.0" prefWidth="685.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <HBox alignment="CENTER" layoutX="14.0" layoutY="258.0" prefHeight="232.0" prefWidth="657.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="258.0" prefHeight="232.0" prefWidth="687.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-5.0">
                            <children>
-                              <TableView fx:id="tblViewK" prefHeight="200.0" prefWidth="642.0">
+                              <TableView fx:id="tblViewK" prefHeight="200.0" prefWidth="696.0">
                                  <columns>
                                     <TableColumn fx:id="colItemCodeK" prefWidth="133.0" text="Item Code" />
                                     <TableColumn fx:id="colItemNameK" prefWidth="127.0" text="Item Name" />
-                                    <TableColumn fx:id="colQtyK" prefWidth="127.0" text="Qty" />
-                                    <TableColumn fx:id="colSizeK" prefWidth="127.0" text="Size" />
-                                    <TableColumn fx:id="colColorK" prefWidth="127.0" text="Color" />
+                                    <TableColumn fx:id="colQtyK" prefWidth="88.0" text="Qty" />
+                                    <TableColumn fx:id="colSizeK" prefWidth="100.0" text="Size" />
+                                    <TableColumn fx:id="colColorK" prefWidth="123.0" text="Color" />
+                                    <TableColumn fx:id="colPriceK" prefWidth="123.0" text="Price" />
                                  </columns>
                               </TableView>
                            </children>
@@ -160,7 +165,7 @@
                         <JFXTextField fx:id="txtItemNameK" layoutX="76.0" layoutY="132.0" prefHeight="25.0" prefWidth="177.0" promptText="Item Name" />
                         <JFXTextField fx:id="txtQtyK" layoutX="76.0" layoutY="181.0" prefHeight="25.0" prefWidth="177.0" promptText="Qty" />
                         <JFXTextField fx:id="txtSizeK" layoutX="76.0" layoutY="231.0" prefHeight="25.0" prefWidth="177.0" promptText="Size" />
-                        <JFXTextField fx:id="txtColorK" layoutX="75.0" layoutY="294.0" prefHeight="25.0" prefWidth="177.0" promptText="Color" />
+                        <JFXTextField fx:id="txtColorK" layoutX="75.0" layoutY="294.0" prefHeight="25.0" prefWidth="184.0" promptText="Color" />
                         <Button layoutX="430.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnAddOnActionK" prefHeight="41.0" prefWidth="163.0" text="ADD">
                            <font>
                               <Font name="System Bold" size="15.0" />
@@ -176,6 +181,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
+                        <JFXTextField fx:id="txtPricerK" layoutX="76.0" layoutY="345.0" prefHeight="25.0" prefWidth="183.0" promptText="Price" />
                      </children>
                   </AnchorPane>
                </children>
